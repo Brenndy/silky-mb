@@ -5,12 +5,9 @@ namespace App\Providers;
 
 use App\Builders\CartBuilder;
 use App\Objects\Cart;
-use App\Objects\Product;
 use App\Providers\Contracts\AbstractCartProvider;
 use App\Validators\CartSessionValidator;
 use Illuminate\Support\Collection;
-use \Exception;
-use Str;
 
 class CartProvider extends AbstractCartProvider
 { 
