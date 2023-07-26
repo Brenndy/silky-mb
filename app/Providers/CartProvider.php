@@ -13,12 +13,9 @@ use \Exception;
 use Str;
 
 class CartProvider extends AbstractCartProvider
-{
-    private CartBuilder $cartBuilder;
- 
-    public function __construct()
+{ 
+    public function __construct(private CartBuilder $cartBuilder)
     {
-        $this->cartBuilder = new CartBuilder();
     }
 
     public function getCart(): Cart
