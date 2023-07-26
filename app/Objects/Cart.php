@@ -8,38 +8,18 @@ use Illuminate\Support\Collection;
 
 class Cart
 {
-    private Collection $cartProducts;
-    private float $summary = 0;
-    private ?string $currency = null;
-
-    public function __construct()
+    public function __construct(private float $summary, private string $currency, private Collection $cartProducts)
     {
-        $this->cartProducts = collect();
     }
 
-    public function setSummary(float $summary): void
+    public function getCurrency(): string
     {
-        $this->summary = $summary;
+        return $this->currency;
     }
 
     public function getSummary(): float
     {
         return $this->summary;
-    }
-
-    public function setCurrency(string $currency): void
-    {
-        $this->currency = $currency;
-    }
-
-    public function getCurrency(): ?string
-    {
-        return $this->currency;
-    }
-
-    public function addProduct(Product $product): void
-    {
-        $this->cartProducts->add($product);
     }
 
     public function getProducts(): Collection

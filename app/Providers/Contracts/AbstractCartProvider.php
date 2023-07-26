@@ -9,7 +9,4 @@ use \Exception;
 abstract class AbstractCartProvider
 {
 	abstract function getCart(): Cart;
-
-    /** @throws Exception */
-    abstract function validateCart(): void;
 }
